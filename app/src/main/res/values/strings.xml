@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PokeDemoAppKotlin</string>
+    <string name="unknown_pokemon">Missing Pokemon Sprite</string>
+    <string name="refresh">Refresh</string>
+</resources>
