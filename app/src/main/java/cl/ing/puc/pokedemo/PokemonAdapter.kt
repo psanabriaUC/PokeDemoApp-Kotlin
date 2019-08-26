@@ -19,8 +19,8 @@ class PokemonAdapter(context: Context) : ArrayAdapter<Pokemon>(context, 0) {
             view = inflater.inflate(R.layout.pokemon_item_layout, parent, false)!!
         }
 
-        val pokemonSpriteImageView : ImageView = view.findViewById(R.id.pokemonSpriteImageView)
-        val pokemonNameTextView : TextView = view.findViewById(R.id.pokemonNameTextView)
+        val pokemonSpriteImageView : ImageView = view.findViewById(R.id.pokemon_sprite_image_view)
+        val pokemonNameTextView : TextView = view.findViewById(R.id.pokemon_name_text_view)
         val pokemon = getItem(position)
 
         pokemonNameTextView.text = pokemon?.name

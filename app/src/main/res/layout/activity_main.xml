@@ -7,13 +7,13 @@
               tools:context=".MainActivity">
 
     <Button
-            android:id="@+id/refreshButton"
+            android:id="@+id/refresh_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/refresh" />
 
     <ListView
-            android:id="@+id/pokemonListView"
+            android:id="@+id/pokemon_list_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 </LinearLayout>

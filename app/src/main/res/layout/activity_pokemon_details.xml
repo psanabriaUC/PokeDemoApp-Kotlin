@@ -1,23 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:minHeight="?android:listPreferredItemHeight"
-        android:orientation="horizontal"
-        tools:ignore="UseCompoundDrawables">
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".PokemonDetailsActivity">
 
     <ImageView
             android:id="@+id/pokemon_sprite_image_view"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:contentDescription="@string/unknown_pokemon"
             android:padding="8dp"
-            android:src="@drawable/unknown_pokemon" />
-
+            android:src="@drawable/unknown_pokemon"
+            android:contentDescription="@string/unknown_pokemon" />
     <TextView
             android:id="@+id/pokemon_name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    <TextView
+            android:id="@+id/pokemon_weight_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    <TextView
+            android:id="@+id/pokemon_height_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 </LinearLayout>

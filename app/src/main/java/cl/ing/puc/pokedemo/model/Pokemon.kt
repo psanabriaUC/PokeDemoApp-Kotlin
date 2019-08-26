@@ -1,11 +1,13 @@
 package cl.ing.puc.pokedemo.model
 
+import java.io.Serializable
+
 data class Pokemon(
     var id: Int,
     var name: String,
     var height: Double,
-    var width: Double,
-    var sprite: Sprite)
+    var weight: Double,
+    var sprite: Sprite) : Serializable
 
 data class Sprite(
     var backFemale: String,
@@ -16,4 +18,4 @@ data class Sprite(
     var backShiny: String,
     var frontDefault: String,
     var frontShiny: String
-)
+) : Serializable
