@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import cl.ing.puc.pokedemo.model.Pokemon
 import cl.ing.puc.pokedemo.model.Sprite
 import com.android.volley.RequestQueue
-import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONException
@@ -44,7 +43,7 @@ class MainActivity : AppCompatActivity() {
     private fun onRefresh() {
         val url = "https://pokeapi.co/api/v2/pokemon"
 
-        val listRequest = JsonObjectRequest(url, null, Response.Listener { response: JSONObject ->
+        val listRequest = JsonObjectRequest(url, null, { response: JSONObject ->
             run {
                 try {
                     val pokemonListJSON = response.getJSONArray("results")
@@ -57,7 +56,7 @@ class MainActivity : AppCompatActivity() {
                     e.printStackTrace()
                 }
             }
-        }, Response.ErrorListener { error ->
+        }, { error ->
             run {
                 Toast.makeText(this, "Network Error", Toast.LENGTH_LONG).show()
                 error.printStackTrace()
@@ -69,9 +68,9 @@ class MainActivity : AppCompatActivity() {
     private fun retrievePokemon(pokemonData: JSONObject?) {
         val url = pokemonData?.getString("url")
         val pokemonRequest =
-            JsonObjectRequest(url, null, Response.Listener { response: JSONObject ->
+            JsonObjectRequest(url, null, { response: JSONObject ->
                 parsePokemon(response)
-            }, Response.ErrorListener { error ->
+            }, { error ->
                 run {
                     Toast.makeText(this, "Network error", Toast.LENGTH_LONG).show()
                     error.printStackTrace()
